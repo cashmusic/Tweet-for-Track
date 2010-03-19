@@ -1,0 +1,19 @@
+A simple webapp to facilitate a tweet-for-track download. Supports open 
+and S3 secured for downloads. Options for required text in the tweet and
+auto-follow back.
+
+Built using the (amazing) work of the following people: 
+
+
+Abraham Williams
+twitteroauth
+http://abrah.am/
+http://github.com/abraham/twitteroauth
+
+Donovan Schönknecht
+Amazon S3 PHP class
+http://undesigned.org.za/2007/10/22/amazon-s3-php-class
+
+Andy Smith
+OAuth PHP library
+http://oauth.googlecode.com/svn/code/php/
