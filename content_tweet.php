@@ -7,6 +7,7 @@
  
 <script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js" type="text/javascript"></script>
 <script type="text/javascript">
+// <![CDATA[
 function updateRemaining(labelid) {
 	max_chars = 140;
 	current_value = $('tweetthis').value;
@@ -36,10 +37,10 @@ window.addEvent('domready', function() {
 	
 	updateRemaining('tweetlabel');
 });
+// ]]>
 </script>
  
 <link href="assets/css/main.css" rel="stylesheet" type="text/css" /> 
-<link href="assets/css/demo.css" rel="stylesheet" type="text/css" /> 
  
 </head> 
 <body> 
@@ -60,14 +61,16 @@ window.addEvent('domready', function() {
 			}
 		?>
 		<label for="tweetthis" id="tweetlabel">Remaining: 140</label>
-		<form id="tweetThis" name="tweetThis" action="redirect.php" method="get">
+		<form id="tweetThis" action="redirect.php" method="get">
 			<div class="tweet">
-				<textarea id="tweetthis" name="tweetthis"><?php echo DEFAULT_TWEET; ?></textarea>	
+				<textarea cols="65" rows="5" id="tweetthis" name="tweetthis"><?php echo DEFAULT_TWEET; ?></textarea>	
 			</div>
 			<?php if (!AUTO_FOLLOW) { ?>
-				<span style="color:#aaa;font-size:0.85em;"><input type="checkbox" checked="checked" name="chosenfollow" value="1" class="checkorradio" /> also follow @<?php echo TWITTER_USERNAME; ?></span><br /><br />
+				<div style="color:#aaa;font-size:0.85em;display:inline;"><input type="checkbox" checked="checked" name="chosenfollow" value="1" class="checkorradio" /> also follow @<?php echo TWITTER_USERNAME; ?><br /><br /></div>
 	  		<?php } ?>
-	  		<input class="button" type="submit" value="tweet" /> 
+	  		<div class="button">
+	  			<input class="button" type="submit" value="tweet" /> 
+	  		</div>
 		</form>
  		
  		<br /><br /><br />

@@ -7,15 +7,16 @@
  
 <script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js" type="text/javascript"></script> 
 <script type="text/javascript">
+//<![CDATA[ 
 window.addEvent('domready', function() {
 	document.id('tweetlink').addEvent('click', function() {
 		document.id('tweetlinkspc').set('html','Thank You!');
 	});
 });
+//]]> 
 </script>
 
 <link href="assets/css/main.css" rel="stylesheet" type="text/css" /> 
-<link href="assets/css/demo.css" rel="stylesheet" type="text/css" /> 
  
 </head> 
 <body> 
