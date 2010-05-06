@@ -33,6 +33,6 @@ if ($okaytodownload) {
 		header('Location: ' . DOWNLOAD_URI);
 	}
 } else {
-	header('Location: /');
+	header('Location: ./');
 }
 ?>

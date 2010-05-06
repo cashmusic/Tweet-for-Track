@@ -35,8 +35,14 @@ unset($_SESSION['oauth_token_secret']);
 /* If HTTP response is 200 continue otherwise start over */
 if (200 == $connection->http_code) {
 	$_SESSION['status'] = 'verified';
+	session_write_close();
+	header('Location: ./');
+} else if (500 == $connection->http_code || 503 == $connection->http_code || 0 == $connection->http_code) {
+	$_SESSION['tweet_error'] = "The Twitter API seems to be overwhelmed or unavailable at this time. Please try again soon.";
+	session_write_close();
 	header('Location: ./');
 } else {
+	session_write_close();
 	header('Location: ./clearsessions.php');
 }
 ?>
