@@ -10,7 +10,7 @@
 define('TWITTER_KEY', 'xxxxxxxxxxxxxxxxxxxxxx');
 define('TWITTER_SECRET', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
 define('TWITTER_USERNAME', 'cashmusic'); // without the @
-define('TWITTER_ID', 15013686); // check the RSS feed on your twitter page to find your twitter id #
+define('TWITTER_ID', '15013686'); // check the RSS feed on your twitter page to find your twitter id #
 define('OAUTH_CALLBACK', 'http://yoursite.com/callback.php');
 
 // set to true to make a user auto-follow you, false to display checkbox
