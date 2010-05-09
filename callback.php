@@ -37,8 +37,12 @@ if (200 == $connection->http_code) {
 	$_SESSION['status'] = 'verified';
 	session_write_close();
 	header('Location: ./');
+} else if (400 == $connection->http_code) {
+		$_SESSION['tweet_error'] = "You have exceeded your Twitter API limit. Please try again soon.";
+		session_write_close();
+		header('Location: ./');
 } else if (500 == $connection->http_code || 503 == $connection->http_code || 0 == $connection->http_code) {
-	$_SESSION['tweet_error'] = "The Twitter API seems to be overwhelmed or unavailable at this time. Please try again soon.";
+	$_SESSION['tweet_error'] = "The Twitter API seems to be unavailable at this time. Please try again soon.";
 	session_write_close();
 	header('Location: ./');
 } else {
