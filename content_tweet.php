@@ -61,7 +61,7 @@ window.addEvent('domready', function() {
 			}
 		?>
 		<label for="tweetthis" id="tweetlabel">Remaining: 140</label>
-		<form id="tweetThis" action="redirect.php" method="get">
+		<form id="tweetform" action="redirect.php" method="get">
 			<div class="tweet">
 				<textarea cols="65" rows="5" id="tweetthis" name="tweetthis"><?php echo DEFAULT_TWEET; ?></textarea>	
 			</div>
