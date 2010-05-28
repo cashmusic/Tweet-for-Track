@@ -57,6 +57,7 @@ if ($_SESSION['oath_begun']) {
 		/* Include HTML to display on the page */
 		include('content_download.php');
 	} else {
+		require_once('config.php');
 		$_SESSION['tweet_error'] = "Twitter reports that you did not verify application access. Please try again.";
 		include('content_tweet.php');	
 	}	
