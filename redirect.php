@@ -25,7 +25,6 @@ if (!$validatedtweet) {
 	$_SESSION['tweet_error'] = "Sorry, but your tweet must contain “". REQUIRED_CONTENT . "” — the rest is up to you.";
 	header('Location: ./'); 
 } else {
-	$_SESSION['oath_begun'] = true;
 	$_SESSION['user_tweet'] = $_REQUEST['tweetthis'];
 	$_SESSION['chosenfollow'] = AUTO_FOLLOW;
 	if (isset($_REQUEST['chosenfollow'])) {
@@ -47,6 +46,7 @@ if (!$validatedtweet) {
 	/* If last connection failed don't display authorization link. */
 	switch ($connection->http_code) {
 	case 200:
+		$_SESSION['oath_begun'] = true;
 		/* Build authorize URL and redirect user to Twitter. */
 		$url = $connection->getAuthorizeURL($token);
 		header('Location: ' . $url); 
