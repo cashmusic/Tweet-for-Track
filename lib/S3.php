@@ -769,7 +769,7 @@ class S3 {
 			$rest = $rest->getResponse();
 			$timediff = $rest->headers['server-time'] - time();
 		}
-		$expires = time() + $timediff + $lifetime;
+		$expires = time() + $timediff + $lifetime + 60;
 		$uri = str_replace('%2F', '/', rawurlencode($uri)); // URI should be encoded (thanks Sean O'Dea)
 		return sprintf(($https ? 'https' : 'http').'://%s/%s?AWSAccessKeyId=%s&Expires=%u&Signature=%s',
 		$hostBucket ? $bucket : $bucket.'.s3.amazonaws.com', $uri, self::$__accessKey, $expires,
@@ -1273,8 +1273,15 @@ final class S3Request {
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, false);
 		curl_setopt($curl, CURLOPT_WRITEFUNCTION, array(&$this, '__responseWriteCallback'));
 		curl_setopt($curl, CURLOPT_HEADERFUNCTION, array(&$this, '__responseHeaderCallback'));
-		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-
+		//
+		//
+		//
+		// added the @ to silence a warning about base_dir and safe_mode -> neither are being
+		// set but still curl freaks out. dunno.
+		@curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+		//
+		//
+		//
 		// Request types
 		switch ($this->verb) {
 			case 'GET': break;
