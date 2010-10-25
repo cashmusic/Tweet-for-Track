@@ -37,6 +37,7 @@ if (!$validatedtweet) {
 	$connection = new TwitterOAuth(TWITTER_KEY, TWITTER_SECRET);
 	 
 	/* Get temporary credentials. */
+	$callbackurl = 'http'.((empty($_SERVER['HTTPS'])&&$_SERVER['SERVER_PORT']!=443)?'':'s').'://'.$_SERVER['HTTP_HOST'].strtok($_SERVER['REQUEST_URI'],'?').'callback.php';
 	$request_token = $connection->getRequestToken(OAUTH_CALLBACK);
 	
 	/* Save temporary credentials to session. */

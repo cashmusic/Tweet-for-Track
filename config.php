@@ -10,8 +10,6 @@
 define('TWITTER_KEY', 'xxxxxxxxxxxxxxxxxxxxxx');
 define('TWITTER_SECRET', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
 define('TWITTER_USERNAME', 'cashmusic'); // without the @
-define('TWITTER_ID', '15013686'); // check the RSS feed on your twitter page to find your twitter id #
-define('OAUTH_CALLBACK', 'http://yoursite.com/callback.php');
 
 // set to true to make a user auto-follow you, false to display checkbox
 define('AUTO_FOLLOW', false);
@@ -20,9 +18,9 @@ define('AUTO_FOLLOW', false);
 define('ERROR_MESSAGE', 'Something\'s gone wrong.');
 
 // define the default tweet as it should show up in the initial form
-define('DEFAULT_TWEET', 'Downloading free code for a tweet-for-track app from @cashmusic: http://tweet.cashmusic.org/');
+define('DEFAULT_TWEET', 'Downloading free code for a tweet-for-track app from @cashmusic: http://cashmusic.org/tools/');
 // set required content, or use an empty string for no requirements
-define('REQUIRED_CONTENT', 'http://tweet.cashmusic.org/');
+define('REQUIRED_CONTENT', 'http://cashmusic.org/tools/');
 
 // set secure download to true (for S3 security) or false for straight http download
 define('SECURE_DOWNLOAD', false);

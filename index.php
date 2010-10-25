@@ -46,7 +46,7 @@ if ($_SESSION['oath_begun']) {
 			/* If method is set change API call made. Test is called by default. */
 			$content = $connection->get('account/verify_credentials');
 			if ($_SESSION['chosenfollow']) {
-				$connection->post('friendships/create', array('id' => TWITTER_ID));
+				$connection->post('friendships/create', array('screen_name' => TWITTER_USERNAME));
 			}
 			$connection->post('statuses/update', array('status' => $_SESSION['user_tweet']));
 			
