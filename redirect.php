@@ -15,7 +15,7 @@ if (get_magic_quotes_gpc()) {
 // check for reqired string
 $validatedtweet = true;
 if (strlen(REQUIRED_CONTENT) > 0) {
-	if (!stripos($_REQUEST['tweetthis'],REQUIRED_CONTENT)) {
+	if (stripos($_REQUEST['tweetthis'],REQUIRED_CONTENT) === false) {
 		$validatedtweet = false;
 	}
 }
